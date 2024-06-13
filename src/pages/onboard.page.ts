@@ -158,11 +158,11 @@ export class OnboardPage extends HTMLElement {
             const data: FormData = new FormData(form);
 
             if (data.getAll('a11y').length === 0) {
-                window.location.href = '/raise-ts/'
+                window.location.href = './raise-ts/'
             } else {
                 let queryParts: string[] = data.getAll('a11y').map((item: FormDataEntryValue) => `user=${item}`);
                 let query : string = '?' + queryParts.join('&');
-                window.location.href = `/raise-ts-vi/${query}`;
+                window.location.href = `./raise-ts-vi/${query}`;
             }
 
         });
