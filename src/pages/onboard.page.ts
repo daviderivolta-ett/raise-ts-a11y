@@ -156,7 +156,15 @@ export class OnboardPage extends HTMLElement {
         form.addEventListener('submit', (e: Event) => {
             e.preventDefault();
             const data: FormData = new FormData(form);
-            data.getAll('a11y').length === 0 ? window.location.href = '/raise-ts/' : window.location.href = "/raise-ts-vi/";
+
+            if (data.getAll('a11y').length === 0) {
+                window.location.href = '/raise-ts/'
+            } else {
+                let queryParts: string[] = data.getAll('a11y').map((item: FormDataEntryValue) => `user=${item}`);
+                let query : string = '?' + queryParts.join('&');
+                window.location.href = `/raise-ts-vi/${query}`;
+            }
+
         });
     }
 }
