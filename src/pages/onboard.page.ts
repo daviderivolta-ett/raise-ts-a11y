@@ -34,6 +34,10 @@ export class OnboardPage extends HTMLElement {
                         <label for="vi" aria-label="ipovisione">Ipovisione</label>
                     </div>
                     <div class="checkbox">
+                        <input type="checkbox" id="color-blindness" name="a11y" value="color-blindness">
+                        <label for="color-blindness" aria-label="daltonismo">Daltonismo</label>
+                    </div>
+                    <div class="checkbox">
                         <input type="checkbox" id="fine-motor" name="a11y" value="fine-motor">
                         <label for="fine-motor" aria-label="problemi di motricità fine">Problemi motricità fine</label>
                     </div>
