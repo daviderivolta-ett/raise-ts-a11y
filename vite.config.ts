@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-    base: '/raise-app/',
+    base: '/raise-ts-a11y/',
     build: {
         outDir: 'docs'
     },
