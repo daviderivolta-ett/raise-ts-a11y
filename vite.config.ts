@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-    base: '/raise-ts-a11y/',
+    base: '/raise-webcomponent-webgis/',
     build: {
         outDir: 'docs'
     },

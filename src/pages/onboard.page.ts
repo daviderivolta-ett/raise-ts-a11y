@@ -41,8 +41,11 @@ export class OnboardPage extends HTMLElement {
                         <input type="checkbox" id="fine-motor" name="a11y" value="fine-motor">
                         <label for="fine-motor" aria-label="problemi di motricità fine">Problemi motricità fine</label>
                     </div>
-                </div>                    
-                <button type="submit">Continua</button>
+                </div>
+                <div class="buttons-section">
+                    <button type="submit" class="secondary-btn">Nessuna</button>
+                    <button type="submit" class="primary-btn">Continua</button>
+                </div>
             </form>
 
             <style>
@@ -134,8 +137,6 @@ export class OnboardPage extends HTMLElement {
                     cursor: pointer;
                     width: 100%;
                     border-radius: var(--border-radius-circle);
-                    color: var(--on-primary);
-                    background-color: var(--primary);
                     padding: 12px;
                     border: 1px solid transparent;
                     box-sizing: border-box;
@@ -143,6 +144,22 @@ export class OnboardPage extends HTMLElement {
                     &:hover {
                         opacity: 0.8;
                     }
+                }
+
+                button.primary-btn {
+                    color: var(--on-primary);
+                    background-color: var(--primary);
+                }
+
+                button.secondary-btn {
+                    color: var(--on-primary-container);
+                    background-color: var(--primary-container);
+                }
+
+                .buttons-section {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
                 }
             </style>
             `

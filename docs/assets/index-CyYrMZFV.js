@@ -1,4 +1,4 @@
-var c=Object.defineProperty;var d=(i,o,r)=>o in i?c(i,o,{enumerable:!0,configurable:!0,writable:!0,value:r}):i[o]=r;var l=(i,o,r)=>(d(i,typeof o!="symbol"?o+"":o,r),r);(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))n(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const a of t.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&n(a)}).observe(document,{childList:!0,subtree:!0});function r(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function n(e){if(e.ep)return;e.ep=!0;const t=r(e);fetch(e.href,t)}})();const u="/raise-ts-a11y/images/RAISE_pictogram_no_bg.svg";class p extends HTMLElement{constructor(){super();l(this,"shadowRoot");this.shadowRoot=this.attachShadow({mode:"closed"})}connectedCallback(){this.render(),this.setup()}render(){this.shadowRoot.innerHTML=`
+var c=Object.defineProperty;var d=(i,o,r)=>o in i?c(i,o,{enumerable:!0,configurable:!0,writable:!0,value:r}):i[o]=r;var s=(i,o,r)=>(d(i,typeof o!="symbol"?o+"":o,r),r);(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))a(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const n of t.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&a(n)}).observe(document,{childList:!0,subtree:!0});function r(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function a(e){if(e.ep)return;e.ep=!0;const t=r(e);fetch(e.href,t)}})();const u="/raise-webcomponent-webgis/images/RAISE_pictogram_no_bg.svg";class p extends HTMLElement{constructor(){super();s(this,"shadowRoot");this.shadowRoot=this.attachShadow({mode:"closed"})}connectedCallback(){this.render(),this.setup()}render(){this.shadowRoot.innerHTML=`
             <div class="logo-wrapper">
                 <img src="${u}" alt="Logo di RAISE" class="logo">
             </div>
@@ -24,8 +24,11 @@ var c=Object.defineProperty;var d=(i,o,r)=>o in i?c(i,o,{enumerable:!0,configura
                         <input type="checkbox" id="fine-motor" name="a11y" value="fine-motor">
                         <label for="fine-motor" aria-label="problemi di motricità fine">Problemi motricità fine</label>
                     </div>
-                </div>                    
-                <button type="submit">Continua</button>
+                </div>
+                <div class="buttons-section">
+                    <button type="submit" class="secondary-btn">Nessuna</button>
+                    <button type="submit" class="primary-btn">Continua</button>
+                </div>
             </form>
 
             <style>
@@ -117,8 +120,6 @@ var c=Object.defineProperty;var d=(i,o,r)=>o in i?c(i,o,{enumerable:!0,configura
                     cursor: pointer;
                     width: 100%;
                     border-radius: var(--border-radius-circle);
-                    color: var(--on-primary);
-                    background-color: var(--primary);
                     padding: 12px;
                     border: 1px solid transparent;
                     box-sizing: border-box;
@@ -127,5 +128,21 @@ var c=Object.defineProperty;var d=(i,o,r)=>o in i?c(i,o,{enumerable:!0,configura
                         opacity: 0.8;
                     }
                 }
+
+                button.primary-btn {
+                    color: var(--on-primary);
+                    background-color: var(--primary);
+                }
+
+                button.secondary-btn {
+                    color: var(--on-primary-container);
+                    background-color: var(--primary-container);
+                }
+
+                .buttons-section {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+                }
             </style>
-            `}setup(){this.onSubmit()}onSubmit(){const r=this.shadowRoot.querySelector("form");r&&r.addEventListener("submit",n=>{n.preventDefault();const e=new FormData(r);if(e.getAll("a11y").length===0)window.location.href="./raise-ts/";else{let a="?"+e.getAll("a11y").map(s=>`user=${s}`).join("&");window.location.href=`./raise-ts-vi/${a}`}})}}customElements.define("page-onboard",p);
+            `}setup(){this.onSubmit()}onSubmit(){const r=this.shadowRoot.querySelector("form");r&&r.addEventListener("submit",a=>{a.preventDefault();const e=new FormData(r);if(e.getAll("a11y").length===0)window.location.href="./raise-ts/";else{let n="?"+e.getAll("a11y").map(l=>`user=${l}`).join("&");window.location.href=`./raise-ts-vi/${n}`}})}}customElements.define("page-onboard",p);
